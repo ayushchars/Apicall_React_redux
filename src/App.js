@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import Header from './Container.js/Header'
+import { BrowserRouter ,Routes,Route } from 'react-router-dom'
+import Productlisting from './Container.js/Productlisting'
+import ProductDetail from './Container.js/ProductDetail'
+import Nopage from './Container.js/nopage'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+   <Header/>
+   <BrowserRouter>
+   <Routes>
+   <Route path='/' element={<Productlisting/>}/>
+   <Route path='/Product/:id' element={<ProductDetail/>}/>
+   <Route path='*' element={<Nopage/>}/>
+   </Routes>
+   </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,13 @@
+for using Semantic UI ...
+
+You must copy the CDN of Semantic UI {semantic.min.css}
+Then past it to index.HTML in public folder.
+
+When we recive the data from server we need to add this data to our store
+for that we need to dispatch an action 
+
+So when we pass this product in action it will go to action and return this object and object is taken by reducer 
+(for remenber action is an object {
+    type : "setProduct",
+    payload : product
+})
